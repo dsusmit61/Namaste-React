@@ -11,13 +11,13 @@ Configuring NPM in project - npm init
 
 when we initialize npm in our project package.json is created.It is nothing but a json file that includes the configuration(provided during initialization of npm) of npm.
 
-npm manages packages that we will install in our project.And it also take care of versions of all the packages.
+npm manages packages that we install in our project.And it also take care of versions of all those packages.
 
 Our project is dependent on lot of packages.So packages are also called as dependencies.
 
 The one of the most important package in our project is bundler.
 
-When you have normal html,css,js files our whole code needs to be bundled,minified,cached,compressed,cleaned before it can be sent to production.Bundler helps you to do all that thing.
+When you have normal html,css,js files our whole code needs to be bundled,minified,cached,compressed,cleaned before it can be sent to production.Bundler helps you to do all those things.
 Examples of bundler - Webpack,Parcel,Vite.
 
 When we create app using create-react-app, that behind the scenes uses webpack bundler and babel.
@@ -29,7 +29,33 @@ npm install -D parcel
 
 There are two types of dependencies our app can have - 
 Normal dependency - Used in both development phase and production phase also. 
-Dev dependency - It's required in development phase
+Dev dependency - It's required only in development phase.
 
 Parcel is required in development phase, not in production phase, So it is installed as dev dependency.So by using -D flag we tell npm that we want to install this package as a dev dependency, not a normal dependency.
 
+Difference between Caret(^) and Tilde(~)
+The Caret(^) allows minor updates of a package.
+In other hand The Tilde(~) allows major updates of a package.
+It is always safe to use the Caret(^) over the Tilde(~) because sometimes when you have a major upgrade  a lot of things in your app can break.
+
+When we install a package a new file package-lock.json is created.
+
+Difference between package.json and package-lock.json
+Package.json does not keep track of exact version of packages.
+On the other hand package-lock.json keeps a track of exact version of the package/dependencies that is installed.
+
+When we install any packages in our project node modules is also created.Node modules is a collection of dependencies that contains all the packages/dependencies we install in our project.For example here we install parcell in our project.Node modules contains parcel package.Parcel as a project has its own dependencies.Those dependencies can have their own dependencies and so on.This is known as Transitive dependencies.
+
+In a project how many package.json do we have?
+Every package inside node modules has its own package.json.Based on that npm gets to know all the details about their dependencies and install them. 
+
+Should I put node modules to git/production?
+No.If you don't want any file to not go into production/git put it in .gitignore file.
+
+Should I put package.json and package-lock.json to git/production?
+Yes.Because package.json stores all the information about dependencies we required for the project and package-lock.json contains the exact versions of those dependencies.So even if we don't push node modules in git by using those two files our node modules can be regenerated and those packages get installed.
+
+Whatever you can regenerate don't put it on git.Git is for essential things.
+
+How to install node modules? 
+npm install
