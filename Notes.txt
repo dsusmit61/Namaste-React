@@ -1,0 +1,35 @@
+TO build fast,optimized and production ready app is React enough itself? 
+No,only React cannot make fast and production ready app.It requires lot of other packages/libraries to make optimized,fast,production ready and scalable app.
+
+NPM - NPM is basically a package manager that manages packages.
+      NPM is basically a standard repository of all the packages.
+      Any package that you need to include in your project you can get it via NPM. All the packages are hosted over there.All the libraries,utilities that you need comes from NPM.
+
+When you use create-react-app to create project it automatically has NPM inside it.So you don't have to configure it.
+
+Configuring NPM in project - npm init
+
+when we initialize npm in our project package.json is created.It is nothing but a json file that includes the configuration(provided during initialization of npm) of npm.
+
+npm manages packages that we will install in our project.And it also take care of versions of all the packages.
+
+Our project is dependent on lot of packages.So packages are also called as dependencies.
+
+The one of the most important package in our project is bundler.
+
+When you have normal html,css,js files our whole code needs to be bundled,minified,cached,compressed,cleaned before it can be sent to production.Bundler helps you to do all that thing.
+Examples of bundler - Webpack,Parcel,Vite.
+
+When we create app using create-react-app, that behind the scenes uses webpack bundler and babel.
+
+All bundlers are same.They do bundling in different way using different algorithms.
+
+How to install parcel package/dependency in our project?
+npm install -D parcel
+
+There are two types of dependencies our app can have - 
+Normal dependency - Used in both development phase and production phase also. 
+Dev dependency - It's required in development phase
+
+Parcel is required in development phase, not in production phase, So it is installed as dev dependency.So by using -D flag we tell npm that we want to install this package as a dev dependency, not a normal dependency.
+
