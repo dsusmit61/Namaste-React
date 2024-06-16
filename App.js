@@ -30,26 +30,43 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 
-const mainDiv = React.createElement(
-  "div",
-  { id: "main" },
-  React.createElement("div", { id: "parent" }, [
-    React.createElement("div", { id: "child1" }, [
-      React.createElement("h2", {}, "Heading2"),
-      React.createElement("p", {}, "Paragraph1"),
-    ]),
-    React.createElement(
-      "div",
-      { id: "child2" },
-      React.createElement("p", { id: "para2" }, "Paragraph2")
-    ),
-  ])
+// const mainDiv = React.createElement(
+//   "div",
+//   { id: "main" },
+//   React.createElement("div", { id: "parent" }, [
+//     React.createElement("div", { id: "child1" }, [
+//       React.createElement("h2", {}, "Heading2"),
+//       React.createElement("p", {}, "Paragraph1"),
+//     ]),
+//     React.createElement(
+//       "div",
+//       { id: "child2" },
+//       React.createElement("p", { id: "para2" }, "Paragraph2")
+//     ),
+//   ])
+// );
+
+// // const heading = React.createElement(
+// //   "h1",
+// //   { id: "heading" },
+// //   "Hello World from React Universe"
+// // );
+// const root = ReactDOM.createRoot(document.getElementById("root"));
+// root.render(mainDiv);
+
+//React Element
+//React.createElement() => React Element(Object) =>HTML Element(render)
+const heading = React.createElement(
+  "h1",
+  { id: "heading1" },
+  "Hello from core React"
 );
 
-// const heading = React.createElement(
-//   "h1",
-//   { id: "heading" },
-//   "Hello World from React Universe"
-// );
+//Create Element using JSX
+const jsxHeading = (
+  <h2 id="heading2" className="head">
+    Hello from JSX
+  </h2>
+);
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(mainDiv);
+root.render(jsxHeading);
