@@ -27,6 +27,8 @@
 //     React.createElement("p", {}, "This is a paragraph of child2"),
 //   ]),
 // ]);
+import React from "react";
+import ReactDOM from "react-dom/client";
 
 const mainDiv = React.createElement(
   "div",

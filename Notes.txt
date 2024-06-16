@@ -1,5 +1,5 @@
-TO build fast,optimized and production ready app is React enough itself? 
-No,only React cannot make fast and production ready app.It requires lot of other packages/libraries to make optimized,fast,production ready and scalable app.
+TO build fast,optimized and production ready large scale application is React enough itself? 
+No,only React cannot make fast and production ready app.It requires lot of other packages/libraries(bundler) to make optimized,fast,production ready and scalable app.
 
 NPM - NPM is basically a package manager that manages packages.
       NPM is basically a standard repository of all the packages.
@@ -59,3 +59,65 @@ Whatever you can regenerate don't put it on git.Git is for essential things.
 
 How to install node modules? 
 npm install
+
+Building app using parcel - 
+npx parcel index.html 
+We are executing parcel by this command.
+Parcel goes to index.html and build a development build and hosts that development build into localhost:1234
+
+npm used when we install any packages via npm 
+npm install package_name
+
+npx used when we try to execute any package.
+npx package_name
+
+There are two ways we can add react to our app 
+- Adding react using cdn link.(Not a preferred way to add react)
+- Adding react package via npm.
+
+Why adding react using cdn link is not preferred way?
+Because it is costly operation as we have to make a network call.
+And if version changes,url can be changed.
+
+npm i package_Name is same as npm install package_Name
+
+What Parcel does?
+- Creates a Dev Build.
+- Creates a Local Server.
+- Hosts app to the server.
+- Automatically refresh pages on save changes.It is known as HMR(Hot Module Replacement)
+- Parcel uses File watching algorithm - written in c++.By this Parcel keeps an eye on all the files.As soon as we develops something and change anything to our code Parcel keeps track of all changes.As soon as you do changes it builds it once again using HMR.
+- Faster development builds using caching.
+Parcel cache is basically caching everything what you do, So that the next builds can be developed faster.
+- Image optimization
+The most expensive things in web browser is to load images in your page.
+- Minification of files
+- Bundling
+- Compress
+Files need to be compressed, so that the size is small,so that we can ship smaller versions of code.It will remove all the white spaces from your code.It will minify and pack all the javascript files and ship it onto production.
+- Consistent Hashing
+- Code Splitting
+- Differential Bundling
+Suppose you hosted your app, your app can be opened through internet explorer even older version of internet explorer, can be opened via mobile browsers.Parcel takes care of all of these and provides differentiate bundling to your app.So that your app can be run smoothly on older browsers also.
+- Diagonistic and gives  beautiful error display view.
+- Good error handling 
+- Tree Shaking - remove unused codes.
+- Parcel gives you way to host app in https.
+- Creates different bundles for dev and production
+Production build takes more time than development build.More optimization in production build than dev build.
+
+Parcel itself not doing everything on its own.For minification Parcel is using some of thr libraries.
+
+How to create production build?
+npx parcel build index.html
+
+main in package.json is the way to tell npm that it is the entry point of our app.But when we are using parcel to create prod build we are telling index.html is the entry point of our app.So conflict happens.Thats why you will get an error.Remove the main in package.json
+
+When you run the above command parcel will bundle,minify and put all the files into dist folder. 
+
+dist folder contains all the development build files and production build files
+Production build is more time taking operation than development build.
+
+Production build is highly optimized which you can push onto production and serve this app to the user.It will be fast,performant and higly optimized.
+
+.parcel-cache,dist can be regenerated.So don't need to put it to github.So they should be put inside .gitignore.
